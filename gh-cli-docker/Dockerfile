@@ -14,4 +14,4 @@ RUN apt update && apt install -y gh;
 RUN mkdir -p /root/.config/gh
 VOLUME /root/.config/gh
 
-# ENTRYPOINT [ "gh" ]
+ENTRYPOINT [ "gh" ]
