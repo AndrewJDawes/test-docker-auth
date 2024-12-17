@@ -26,7 +26,7 @@ fi
 # Populate the config.json with an empty object if no object exists
 jq '. + {}' "${DOCKER_CONFIG_DIR}/config.json" >"/tmp/config.json"
 jq '.credsStore = ""' "${DOCKER_CONFIG_DIR}/config.json" >"/tmp/config.json"
-jq ".auths = { \"ghcr.io\": { \"auth\": \"${BASE64_GITHUB_OAUTH_TOKEN}\" } }" "${DOCKER_CONFIG_DIR}/config.json" >"/tmp/config.json"
+jq ".auths.\"ghcr.io\" = { \"auth\": \"${BASE64_GITHUB_OAUTH_TOKEN}\" }" "${DOCKER_CONFIG_DIR}/config.json" >"/tmp/config.json"
 # Equivalent: gh auth token | docker login ghcr.io -u USERNAME --password-stdin
 chown "${HOST_UID:-0}:${HOST_GID:-0}" "/tmp/config.json"
 # If file already exists, overwrite it
