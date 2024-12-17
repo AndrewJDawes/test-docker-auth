@@ -1,3 +1,5 @@
+#!/bin/bash
+set -e
 cd gh-cli-docker
 bash test.sh
 cd ..

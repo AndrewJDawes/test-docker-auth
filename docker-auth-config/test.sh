@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 DOCKER_SOCK="${DOCKER_SOCK:-/var/run/docker.sock}"
 DOCKER_CONFIG_DIR="${DOCKER_CONFIG_DIR:-$HOME/.docker/}"
 mkdir -p "$DOCKER_CONFIG_DIR"
