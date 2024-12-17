@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ARG ARCH=arm64
+ARG ARCH=amd64
 
 RUN apt-get update && apt install -y \
   curl \

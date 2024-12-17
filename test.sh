@@ -1,5 +1,5 @@
-cd docker-daemon-auth-docker
+cd gh-cli-docker
 bash test.sh
 cd ..
-cd github-cli-docker
+cd docker-auth-config
 bash test.sh
