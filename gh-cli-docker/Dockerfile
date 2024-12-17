@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-ARG ARCH=arm64
 
 RUN apt-get update && apt install -y \
   curl \

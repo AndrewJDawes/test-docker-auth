@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-ARG ARCH=amd64
 
 RUN apt-get update && apt install -y \
   curl \
@@ -8,7 +7,7 @@ RUN apt-get update && apt install -y \
 
 # Install yq
 RUN apt-get update && apt-get install -y wget
-RUN wget "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_${ARCH}" -O /usr/bin/yq &&\
+RUN wget "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_$(dpkg --print-architecture)" -O /usr/bin/yq &&\
   chmod +x /usr/bin/yq
 
 # Install jq
